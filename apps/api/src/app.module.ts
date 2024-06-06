@@ -1,10 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { MongooseModule } from '@nestjs/mongoose';
 import { LoggerModule } from 'nestjs-pino';
 import { validate } from './config/validation';
-import { SleepController } from './sleep/sleep.controller';
-import { SleepModule } from './sleep/sleep.module';
-import { SleepService } from './sleep/sleep.service';
+import { SleepRecordModule } from './sleepRecord/sleep-record.module';
 
 @Module({
   imports: [
@@ -14,9 +13,10 @@ import { SleepService } from './sleep/sleep.service';
       validate,
       envFilePath: ['.env'],
     }),
-    SleepModule,
+    MongooseModule.forRoot(`mongodb://localhost:27017/sleep-tracker`),
+    SleepRecordModule,
   ],
-  controllers: [SleepController],
-  providers: [SleepService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

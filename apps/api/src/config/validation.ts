@@ -4,14 +4,22 @@ import { IsNotEmpty, IsNumber, IsString, validateSync } from 'class-validator';
 class EnvironmentVariables {
   @IsNotEmpty()
   @IsNumber()
-  APP_PORT?: number;
+  APP_PORT: number;
 
   @IsNotEmpty()
   @IsString()
-  APP_NAME?: string;
+  APP_NAME: string;
 
   @IsString()
-  NODE_ENV?: string;
+  NODE_ENV: string;
+
+  // @IsNotEmpty()
+  // @IsString()
+  // MONGO_ATLAS_USER: string;
+
+  // @IsNotEmpty()
+  // @IsString()
+  // MONGO_ATLAS_PASSWORD: string;
 
   constructor(config: Partial<EnvironmentVariables>) {
     Object.assign(this, config);

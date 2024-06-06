@@ -10,21 +10,18 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
     console.error(error);
   }, [error]);
 
   return (
-    <div>
-      <h2>Something went wrong!</h2>
+    <main className="flex h-full flex-col items-center justify-center text-black">
+      <h2 className="text-center">Something went wrong!</h2>
       <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
+        className="mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-400"
+        onClick={() => reset()}
       >
         Try again
       </button>
-    </div>
+    </main>
   );
 }

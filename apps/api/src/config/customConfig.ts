@@ -7,11 +7,19 @@ export class ConfigService extends NestConfigService {
     return this.get<number>('APP_PORT');
   }
 
-  get getAppName(): number | undefined {
-    return this.get<number>('APP_NAME');
+  get getAppName(): string | undefined {
+    return this.get<string>('APP_NAME');
   }
 
-  get getEnvironment(): number | undefined {
-    return this.get<number>('NODE_ENV');
+  get getEnvironment(): string | undefined {
+    return this.get<string>('NODE_ENV');
   }
+
+  // get getMongoHost(): string | undefined {
+  //   return this.get<string>('MONGO_ATLAS_USER');
+  // }
+
+  // get getMongoPort(): string | undefined {
+  //   return this.get<string>('MONGO_ATLAS_PASSWORD');
+  // }
 }
