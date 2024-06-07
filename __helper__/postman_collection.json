@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "864e229f-0c89-4fa2-856c-4cf02e1a01ea",
+		"name": "sleep-tracker-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3455106"
+	},
+	"item": [
+		{
+			"name": "get records",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/sleep-record",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sleep-record"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get records by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/sleep-record?name=John",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sleep-record"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "John"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"alta\",\n  \"gender\": \"male\",\n  \"duration\": 8,\n  \"date\": \"2024-02-02\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/sleep-record",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sleep-record"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

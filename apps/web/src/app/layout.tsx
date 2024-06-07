@@ -7,7 +7,7 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const appName = process.env.NEXT_PUBLIC__APP_NAME;
+const appName = process.env.NEXT_PUBLIC_APP_NAME;
 const appdescription = process.env.NEXT_PUBLIC__APP_DESCRIPTION;
 
 export const metadata: Metadata = {

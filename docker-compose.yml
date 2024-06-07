@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: sleep_tracker_api
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - custom_network
+    environment:
+      NODE_ENV: production
+      APP_PORT: 5000
+      APP_NAME: SleepTimerTracker
+
+  web:
+    container_name: sleep_tracker_web
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    networks:
+      - custom_network
+    environment:
+      NODE_ENV: production
+
+volumes:
+  mongo_data:
+    driver: local
+
+networks:
+  custom_network:
+    driver: bridge
