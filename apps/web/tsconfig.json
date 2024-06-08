@@ -27,7 +27,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/home/page.jsx",
-    "src/components/ErrorBoundary.jsx"
+    "src/components/ErrorBoundary.jsx",
+    "cypress/support/component.js"
   ],
   "exclude": ["node_modules"]
 }
