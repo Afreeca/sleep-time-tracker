@@ -32,7 +32,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/sleep-record?name=John",
+					"raw": "http://localhost:5000/api/sleep-record/user?name=alta",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -40,12 +40,13 @@
 					"port": "5000",
 					"path": [
 						"api",
-						"sleep-record"
+						"sleep-record",
+						"user"
 					],
 					"query": [
 						{
 							"key": "name",
-							"value": "John"
+							"value": "alta"
 						}
 					]
 				}

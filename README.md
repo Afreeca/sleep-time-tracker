@@ -4,15 +4,16 @@
 
 This application, SleepTracker, is designed to help users monitor and track their sleep patterns over time. It provides a simple interface for users to input their sleep duration along with other relevant information such as name, gender, and date. The app then stores this data in a database for future reference.
 
-### Product assumptions
+## Product assumptions
 
 - Users can
+  - because there is no authentication, there is no validation on the user and we are only fetching on full name match(bare in mind when testing) o use just first names
   - enter multiple sleeping data without any limitation
   - only add a past sleeping records until the current day
   - we allow user to enter multiple records for the same day, because it seems a valid use case
 - I did use client side rendering, and the only reason because I wanted to test the new next App route with redux, because it force redux to change the previous implementation. and it is a more interesting use case
 
-### Project directory structure
+## Project directory structure
 
     ├── helper/ # exercise helper docs
     |    ├── docs.pdf # task requirement
@@ -76,6 +77,9 @@ This application, SleepTracker, is designed to help users monitor and track thei
   <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/>
   </a>
+   <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.AoFmhuVcQWFwCx4G2ZnuJQHaIq%26pid%3DApi&f=1&ipt=0ab77d652f849b6e4d8640ad64b9db5764a24a1a4515957f5b9344ceac24eae5&ipo=images" alt="tailwind" width="40" height="40"/>
+  </a>
 </p>
 
 ## Requirements
@@ -124,26 +128,26 @@ To run the application manually, you need Node and npm installed. Follow these s
 
 2. Start the frontend web:
 
-   1. From the root folder (`project-folder`), navigate to the web/ folder:
+   1. create the `.env.local` file based on the `.env.local.example`
+
+   2. From the root folder (`project-folder`), navigate to the web/ folder:
 
       ```bash
       cd apps/web
       ```
 
-   2. install dependencies
+   3. install dependencies
       ```bash
       npm install
       ```
-   3. run the web
+   4. run the web
       ```bash
       npm run dev
       ```
 
 **Note:**
 
-1.  before running the frontend manually, make sure to create the `.env.local` file based on the `.env.local.example` before you can successufly run the app.
-
-2.  On the **helper** folder you will find a postman collection which allows you to directly test the api endpoints
+On the **helper** folder you will find a postman collection which allows you to directly test the api endpoints
 
 #### Run it using Docker
 
@@ -180,11 +184,11 @@ Once the application is running, you can access the web by opening [http://local
 
 If you encounter port conflicts, it might be due to other applications using the same ports. Before running the application, ensure that ports `5000` and `3000` are available. If not, you can modify the port bindings in the Dockerfiles (UI and server) and also in the docker-compose.yml file.
 
-### Run Unit tests (Jest)
+## Run Unit tests (Jest)
 
-### Improvements(production ready)
+## Improvements
 
-#### api
+### api
 
 1. Pagination:
    - implemente pagination if supported by external API
