@@ -4,8 +4,9 @@ import { Model } from 'mongoose';
 import {
   SleepRecord,
   SleepRecordDocument,
-} from 'src/providers/schemas/sleepRecord.schema';
+} from '../../src/providers/schemas/sleepRecord.schema';
 import { CreateSleepRecordDTO } from './dto/sleep-record.dto';
+import { SleepRecordType } from './entity/sleep-record';
 
 @Injectable()
 export class SleepRecordService {
@@ -17,12 +18,11 @@ export class SleepRecordService {
     this.logger = new Logger(SleepRecordService.name);
   }
 
-  async create(sleepRecord: CreateSleepRecordDTO): Promise<SleepRecord> {
-    const newRecord = new this.sleepRecordModel(sleepRecord);
-    return await newRecord.save();
+  async create(sleepRecord: CreateSleepRecordDTO): Promise<SleepRecordType> {
+    return await this.sleepRecordModel.create(sleepRecord);
   }
 
-  async getByName({ name }): Promise<SleepRecord[]> {
+  async getByName(name: string): Promise<SleepRecordType[]> {
     if (!name) {
       throw new BadRequestException('Name parameter is required');
     }
@@ -30,7 +30,7 @@ export class SleepRecordService {
     return await this.sleepRecordModel.find(caseInsensitiveQuery);
   }
 
-  async getAll(): Promise<SleepRecord[]> {
+  async getAll(): Promise<SleepRecordType[]> {
     return await this.sleepRecordModel.find();
   }
 }

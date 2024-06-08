@@ -1,8 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, HydratedDocument } from 'mongoose';
+import { Document, HydratedDocument, ObjectId } from 'mongoose';
 
 @Schema({ versionKey: false })
 export class SleepRecord extends Document {
+  _id: ObjectId;
+
   @Prop({ required: true })
   name: string;
 
