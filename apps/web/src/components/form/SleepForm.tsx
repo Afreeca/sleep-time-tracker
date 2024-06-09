@@ -41,7 +41,7 @@ const SleepForm = ({ onSubmit }: SleepFormProps) => {
   }, [durationValue, setError, clearErrors]);
 
   return (
-    <div className="flex flex-1 items-center">
+    <div className="flex flex-1 items-center text-white">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col bg-slate-700 p-4 rounded-md"
@@ -101,7 +101,7 @@ const SleepForm = ({ onSubmit }: SleepFormProps) => {
           disabled={!isValid}
           className={`${
             isValid ? "bg-blue-500" : "bg-slate-300"
-          } text-white py-2 px-4 rounded-md`}
+          } text-blue-800 py-2 px-4 rounded-md`}
         >
           Submit
         </button>

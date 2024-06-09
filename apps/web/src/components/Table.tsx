@@ -24,8 +24,8 @@ const SleepRecordsTable: React.FC<SleepRecordsTableProps> = ({
   return (
     <div>
       <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-200">
-          <thead className="bg-slate-500 text-white">
+        <table className="min-w-full border border-gray-200 text-white">
+          <thead className="bg-slate-500 text-left">
             <tr>
               <th className="py-3 px-4 border-b border-gray-200">Name</th>
               <th className="py-3 px-4 border-b border-gray-200">Gender</th>
