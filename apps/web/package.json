@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cy:open": "npx cypress open",
+    "cy:component": "cypress run --component"
   },
   "dependencies": {
     "@headlessui/react": "^2.0.4",

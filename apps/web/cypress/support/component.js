@@ -18,9 +18,6 @@ import "../../src/app/globals.css";
 import ErrorBoundary from "../../src/components/ErrorBoundary";
 import "./commands";
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
-
 Cypress.Commands.add("mount", mount);
 
 Cypress.Commands.add("mountWithProvider", (component, options = {}) => {

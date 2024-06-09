@@ -184,7 +184,40 @@ Once the application is running, you can access the web by opening [http://local
 
 If you encounter port conflicts, it might be due to other applications using the same ports. Before running the application, ensure that ports `5000` and `3000` are available. If not, you can modify the port bindings in the Dockerfiles (UI and server) and also in the docker-compose.yml file.
 
-## Run Unit tests (Jest)
+## Tests
+
+There are api and ui tests.
+
+- API unit test were created using jest
+- ui tests were created using cypress component tests
+
+### Run Unit tests (Jest)
+
+1. From the root folder (`project-folder`), navigate to the api/ folder:
+
+   ```bash
+   cd app/api
+
+   ```
+
+2. Run all the tests:
+   ```bash
+   npm run test
+   ```
+
+### Run web component tests
+
+1. From the root folder (`project-folder`), navigate to the web/ folder:
+
+   ```bash
+   cd app/web
+
+   ```
+
+2. Run all the tests:
+   ```bash
+   npm run cy:component
+   ```
 
 ## Improvements
 
