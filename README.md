@@ -6,11 +6,14 @@ This application, SleepTracker, is designed to help users monitor and track thei
 
 ## Product assumptions
 
-- Users can
-  - because there is no authentication, there is no validation on the user and we are only fetching on full name match(bare in mind when testing) o use just first names
-  - enter multiple sleeping data without any limitation
-  - only add a past sleeping records until the current day
-  - we allow user to enter multiple records for the same day, because it seems a valid use case
+- There is is no authentication
+- When fetching a specific user sleep records, the name needs to match at 100% (bare in mind when testing)
+- A user can enter multiple sleeping data without any limitation
+- A user is allowed to only add a past sleeping record until the current day
+- A user can enter multiple records for the same day
+
+# Technical assumptions
+
 - I did use client side rendering, and the only reason because I wanted to test the new next App route with redux, because it force redux to change the previous implementation. and it is a more interesting use case
 
 ## Project directory structure
@@ -224,7 +227,7 @@ There are api and ui tests.
 ### api
 
 1. Pagination:
-   - implemente pagination if supported by external API
+   - implement pagination if supported by external API
 2. Create more .env files. For example, for production, we could have a .env.prod
 3. Tests:
    - Maybe increate the unit test coverage
